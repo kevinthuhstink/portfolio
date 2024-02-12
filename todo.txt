@@ -1,0 +1,12 @@
+TODO
+EMPHASIZE DESIGN AND EASE OF USE
+
+1.1
+    Format the body of the website
+        Have a sidebar on the left and the rest be the body
+            Intentionally misalign your name
+        Keep your github, linkedin, and other links at the bottom for people to reach out
+            For now they can be text-anchored but eventually switch to img-anchored
+    Title page will come later
+    Responsiveness will come later
+        ie. make sidebar a dropdown instead on mobile
