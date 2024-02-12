@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
@@ -10,15 +14,22 @@ main {
   width: 30vw;
   height: 100%;
   position: fixed;
-  margin-top: 100px;
+  padding-top: 40px;
 
   background: lightgray;
 
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #sidebar > h1 {
   display: inline-block;
   position: relative;
-  margin: auto;
+  margin: 0 auto;
+}
+
+#links {
+  margin: 0;
+  margin-bottom: 20px
 }
