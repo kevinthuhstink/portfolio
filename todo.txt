@@ -1,7 +1,7 @@
 TODO
 EMPHASIZE DESIGN AND EASE OF USE
 
-1.1
+1.0
     Format the body of the website
         Have a sidebar on the left and the rest be the body
             Intentionally misalign your name
