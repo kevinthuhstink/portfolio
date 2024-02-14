@@ -17,40 +17,54 @@ body {
   border-width: 10px;
   border-color: azure;
 
-  font-family: "Archivo Black", sans-serif;
-  font-weight: 400;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 200;
   background: #555;
 }
 
-#title-text {
-  margin: auto;
-
+#text-wrapper {
   color: azure;
+  position: relative;
 }
 
-#title-name {
-  margin: 0;
-  padding-left: 20px;
-  font-size: 7em;
+#title {
+  display: flex;
+  padding: 20px;
 
   border-bottom-style: dashed;
   border-width: 2px;
   border-color: azure;
 }
 
-#title-text > footer {
-  padding-left: 20px;
+#title > h1 {
+  margin: 0;
+  display: inline-block;
+
+  font-weight: 200;
   font-size: 4em;
+  letter-spacing: 2px;
+  line-height: 0.8;
+}
+
+#title-spacer {
+  margin: 0 20px;
+  font-size: 8em;
+  line-height: 0.8;
 }
 
 #title-links {
-  position: relative;
-  margin-top: auto;
-  margin-right: 20px;
-  padding-left: 24px;
-  float: left;
-
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  margin: 10px;
+  padding: 0;
   list-style-type: none;
+}
+
+#title-links > * {
+  color: azure;
+  text-decoration: none;
+  display: inline;
 }
 
 #title-links a:any-link {
@@ -62,110 +76,15 @@ body {
   color: aliceblue;
 }
 
-#title-wrapper > * {
-  margin: 100px 0;
-}
 
-#text-wrapper {
-  text-align: center;
-  position: relative;
-  display: none;
-}
-
-
-#spinning-text {
-  display: inline-block;
-
-  font-size: 2em;
-  color: azure;
-
-  transform: var(--rotation-init-angle);
-  animation-name: spin;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-duration: 7s;
-  transform-style: preserve-3d;
-}
-
-/* note to future self:
- * rotations also move the axes,
- * not just the element */
-@keyframes spin {
-  0% { 
-    transform: 
-      var(--rotation-init-angle)
-      rotateY(0deg);
-    }
-  100% {
-    transform: 
-      var(--rotation-init-angle)
-      rotateY(-360deg);
-    }
-}
-
-#cube {
-  width: 50px;
-  height: 50px;
-  position: relative;
-  left: 47%;
-  text-align: center;
-
-  transform: var(--rotation-init-angle);
-  animation-name: spin;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-duration: 4s;
-  transform-style: preserve-3d;
-}
-
-.face {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-
-  color: rgba(255,255,255,1);
-  font-family: 'Helvetica Neue';
-  font-weight: 500;
-  font-size: 3em;
-}
-.front {
-  transform: rotateY(0deg) translateZ(25px);
-  /* background: rgba(255,255,0,.3); */
-  background: yellow;
-}
-.back {
-  transform: rotateY(-180deg) translateZ(25px);
-  /* background: rgba(255,0,0,.3); */
-  background: red;
-}
-.right {
-  transform: rotateY(90deg) translateZ(25px);
-  /* background: rgba(0,255,255,.3); */
-  background: orange;
-}
-.left {
-  transform: rotateY(-90deg) translateZ(25px);
-  /* background: rgba(0,0,255,.3); */
-  background: blue;
-}
-.top {
-  transform: rotateX(90deg) translateZ(25px);
-  /* background: rgba(255,0,255,.3); */
-  background: purple;
-}
-.bottom {
-  transform: rotateX(-90deg) translateZ(25px);
-  /* background: rgba(0,255,0,.3); */
-  background: green;
-}
-
-
+/* SPHERE */
 #sphere-background {
   display: inline-block;
   width: 100px;
   height: 100px;
-  position: relative;
-  left: calc(50% - 50px);
+  position: absolute;
+  right: 70px;
+  bottom: 70px;
   perspective: 95px;
 }
 
@@ -269,4 +188,20 @@ body {
 }
 .sphere-text:last-child {
   transform: rotateY(158deg) translateZ(52.9px);
+}
+
+/* note to future self:
+ * rotations also move the axes,
+ * not just the element */
+@keyframes spin {
+  0% { 
+    transform: 
+      var(--rotation-init-angle)
+      rotateY(0deg);
+    }
+  100% {
+    transform: 
+      var(--rotation-init-angle)
+      rotateY(-360deg);
+    }
 }
