@@ -1,5 +1,8 @@
 :root {
   --rotation-init-angle: rotateX(-8deg) rotateY(10deg) rotateZ(-30deg);
+  --primary: darkslategray;
+  --accent: red;
+  --background: azure;
 }
 
 * {
@@ -8,23 +11,27 @@
 
 body {
   margin: 0;
+  color: var(--primary);
 }
 
 #title-wrapper {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   border-style: solid;
   border-width: 10px;
-  border-color: azure;
+  border-color: var(--primary);
 
   font-family: "Helvetica Neue", sans-serif;
   font-weight: 200;
-  background: #555;
+  background: var(--background);
 }
 
-#text-wrapper {
-  color: azure;
+#title-topbar {
   position: relative;
+  flex-grow: 0;
 }
 
 #title {
@@ -33,7 +40,7 @@ body {
 
   border-bottom-style: dashed;
   border-width: 2px;
-  border-color: azure;
+  border-color: var(--primary);
 }
 
 #title > h1 {
@@ -52,59 +59,91 @@ body {
   line-height: 0.8;
 }
 
+#title-bottom {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+
+  padding: 20px;
+  margin: 0;
+  font-weight: 500;
+}
+
+#aboutme {
+  position: absolute;
+  display: inline-block;
+  width: 200px;
+  bottom: 20px;
+}
+
 #title-links {
   position: absolute;
-  left: 20px;
-  bottom: 20px;
-  margin: 10px;
+  display: inline;
+  margin: 0;
   padding: 0;
   list-style-type: none;
+
+  right: 20px;
+  top: 20px;
 }
 
 #title-links > * {
-  color: azure;
   text-decoration: none;
   display: inline;
 }
 
 #title-links a:any-link {
-  color: azure;
+  color: var(--primary);
   text-decoration: none;
 }
 
 #title-links a:hover {
-  color: aliceblue;
+  color: var(--accent);
 }
+
+#title-links > li:first-child {
+  text-decoration: line-through;
+  text-decoration-thickness: 4px;
+  text-decoration-color: var(--accent);
+}
+
 
 
 /* SPHERE */
 #sphere-background {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
   position: absolute;
-  right: 70px;
-  bottom: 70px;
+  display: inline;
+  width: 154px;
+  height: 154px;
+  padding: 25px;
+
+  border-style: dashed;
+  border-color: var(--primary);
+  border-width: 2px;
+
   perspective: 95px;
+  right: 30vw;
+  bottom: 20vh;
 }
 
 #sphere-background::before {
   content: '';
   position: absolute;
   border-radius: 50%;
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
 
   transform: translateZ(2px);
-  background-color: black;
-  background-image: radial-gradient(circle at 33% 33%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.1) 80%, black);
-  filter: drop-shadow(2px 2px 0.25em azure);
+  background-color: var(--accent);
+  background-image: radial-gradient(circle at 33% 33%, rgba(255,255,255,.55) 0%, rgba(255,255,255,.4) 40%, rgba(255,255,255,.1) 80%, black);
+  filter: drop-shadow(2px 2px 0.25em var(--primary));
 }
 
 #sphere {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
 
   animation-name: spin;
   animation-timing-function: linear;
@@ -128,7 +167,6 @@ body {
 .sphere-text {
   position: absolute;
 
-  color: azure;
   font-family: 'Helvetica Neue';
   font-weight: 500;
   font-size: 1em;
@@ -194,14 +232,17 @@ body {
  * rotations also move the axes,
  * not just the element */
 @keyframes spin {
-  0% { 
-    transform: 
+  0% {
+    transform:
       var(--rotation-init-angle)
       rotateY(0deg);
     }
   100% {
-    transform: 
+    transform:
       var(--rotation-init-angle)
       rotateY(-360deg);
     }
 }
+
+
+/* HAND */
