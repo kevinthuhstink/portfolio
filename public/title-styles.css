@@ -1,5 +1,5 @@
 :root {
-  --rotation-init-angle: rotateX(-20deg) rotateY(10deg) rotateZ(-30deg);
+  --rotation-init-angle: rotateX(-10deg) rotateY(10deg) rotateZ(-30deg);
 }
 
 * {
@@ -12,7 +12,6 @@ body {
 
 #title-wrapper {
   min-height: 100vh;
-  perspective: 1000px;
 
   border-style: solid;
   border-width: 10px;
@@ -92,33 +91,17 @@ body {
  * rotations also move the axes,
  * not just the element */
 @keyframes spin {
-  from { transform: 
-    var(--rotation-init-angle)
-    rotateY(0deg); }
-  to { transform: 
-    var(--rotation-init-angle)
-    rotateY(360deg); }
-}
-
-@keyframes spin-hide {
-  0% { transform: 
-    var(--rotation-init-angle)
-    rotateY(0deg); }
-  30% {
+  0% { 
     transform: 
       var(--rotation-init-angle)
-      rotateY(108deg);
-    opacity: 0; }
-  70% {
-    transform:
+      rotateY(0deg);
+    }
+  100% {
+    transform: 
       var(--rotation-init-angle)
-      rotateY(252deg);
-    opacity: 0; }
-  100% { transform: 
-    var(--rotation-init-angle)
-    rotateY(360deg); }
+      rotateY(360deg);
+    }
 }
-
 
 #cube {
   width: 50px;
@@ -139,7 +122,6 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
-  opacity: 1;
 
   color: rgba(255,255,255,1);
   font-family: 'Helvetica Neue';
@@ -184,23 +166,23 @@ body {
   height: 100px;
   position: relative;
   left: calc(50% - 50px);
+  perspective: 90px;
 }
 
 #sphere-background::before {
   content: '';
-  display: inline-block;
   position: absolute;
   border-radius: 50%;
   width: 100%;
   height: 100%;
 
-  transform: translateZ(10px);
-  background-color: black;
-  background-image: radial-gradient(circle at 33% 33%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.1) 80%, black);
+  background: black;
+  /* background: radial-gradient(circle at 33% 33%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.1) 80%, black); */
   filter: drop-shadow(2px 2px 0.25em azure);
 }
 
 #sphere {
+  position: absolute;
   width: 100%;
   height: 100%;
 
@@ -212,9 +194,8 @@ body {
 }
 
 .sphere-text {
-  display: inline-block;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   margin: 0;
 
@@ -222,6 +203,54 @@ body {
   font-family: 'Helvetica Neue';
   font-weight: 500;
   font-size: 1em;
+  transform-style: preserve-3d;
+}
 
-  transform: translateZ(53px)
+.sphere-text:first-child {
+  transform: translateZ(53px);
+}
+.sphere-text:nth-child(2) {
+  transform: rotateY(22.5deg) translateZ(53px);
+}
+.sphere-text:nth-child(3) {
+  transform: rotateY(45deg) translateZ(53px);
+}
+.sphere-text:nth-child(4) {
+  transform: rotateY(67.5deg) translateZ(53px);
+}
+.sphere-text:nth-child(5) {
+  transform: rotateY(90deg) translateZ(53px);
+}
+.sphere-text:nth-child(6) {
+  transform: rotateY(112.5deg) translateZ(53px);
+}
+.sphere-text:nth-child(7) {
+  transform: rotateY(135deg) translateZ(53px);
+}
+.sphere-text:nth-child(8) {
+  transform: rotateY(157.5deg) translateZ(53px);
+}
+.sphere-text:nth-child(9) {
+  transform: rotateY(180deg) translateZ(53px);
+}
+.sphere-text:nth-child(10) {
+  transform: rotateY(202.5deg) translateZ(53px);
+}
+.sphere-text:nth-child(11) {
+  transform: rotateY(225deg) translateZ(53px);
+}
+.sphere-text:nth-child(12) {
+  transform: rotateY(247.5deg) translateZ(53px);
+}
+.sphere-text:nth-child(13) {
+  transform: rotateY(270deg) translateZ(53px);
+}
+.sphere-text:nth-child(14) {
+  transform: rotateY(292.5deg) translateZ(53px);
+}
+.sphere-text:nth-child(15) {
+  transform: rotateY(315deg) translateZ(53px);
+}
+.sphere-text:last-child {
+  transform: rotateY(337.5deg) translateZ(53px);
 }
