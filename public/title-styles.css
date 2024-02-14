@@ -20,7 +20,7 @@ body {
 
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
-  background: #11113d;
+  background: #555;
 }
 
 #title-text {
@@ -81,7 +81,7 @@ body {
   color: azure;
 
   transform: var(--rotation-init-angle);
-  animation-name: orbit-spin;
+  animation-name: spin;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-duration: 7s;
@@ -91,11 +91,30 @@ body {
 /* note to future self:
  * rotations also move the axes,
  * not just the element */
-@keyframes orbit-spin {
+@keyframes spin {
   from { transform: 
     var(--rotation-init-angle)
     rotateY(0deg); }
   to { transform: 
+    var(--rotation-init-angle)
+    rotateY(360deg); }
+}
+
+@keyframes spin-hide {
+  0% { transform: 
+    var(--rotation-init-angle)
+    rotateY(0deg); }
+  30% {
+    transform: 
+      var(--rotation-init-angle)
+      rotateY(108deg);
+    opacity: 0; }
+  70% {
+    transform:
+      var(--rotation-init-angle)
+      rotateY(252deg);
+    opacity: 0; }
+  100% { transform: 
     var(--rotation-init-angle)
     rotateY(360deg); }
 }
@@ -105,11 +124,11 @@ body {
   width: 50px;
   height: 50px;
   position: relative;
-  left: 48%;
+  left: 47%;
   text-align: center;
 
   transform: var(--rotation-init-angle);
-  animation-name: orbit-spin;
+  animation-name: spin;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-duration: 4s;
@@ -120,6 +139,7 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
+  opacity: 1;
 
   color: rgba(255,255,255,1);
   font-family: 'Helvetica Neue';
@@ -128,27 +148,33 @@ body {
 }
 .front {
   transform: rotateY(0deg) translateZ(25px);
-  background: rgba(255,255,0,.3);
+  /* background: rgba(255,255,0,.3); */
+  background: yellow;
 }
 .back {
   transform: rotateY(-180deg) translateZ(25px);
-  background: rgba(255,0,0,.3);
+  /* background: rgba(255,0,0,.3); */
+  background: red;
 }
 .right {
   transform: rotateY(90deg) translateZ(25px);
-  background: rgba(0,255,255,.3);
+  /* background: rgba(0,255,255,.3); */
+  background: orange;
 }
 .left {
   transform: rotateY(-90deg) translateZ(25px);
-  background: rgba(0,0,255,.3);
+  /* background: rgba(0,0,255,.3); */
+  background: blue;
 }
 .top {
   transform: rotateX(90deg) translateZ(25px);
-  background: rgba(255,0,255,.3);
+  /* background: rgba(255,0,255,.3); */
+  background: purple;
 }
 .bottom {
   transform: rotateX(-90deg) translateZ(25px);
-  background: rgba(0,255,0,.3);
+  /* background: rgba(0,255,0,.3); */
+  background: green;
 }
 
 
@@ -157,13 +183,45 @@ body {
   width: 100px;
   height: 100px;
   position: relative;
-  left: 47%;
-  border-radius: 50px;
+  left: calc(50% - 50px);
+}
 
+#sphere-background::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+
+  transform: translateZ(10px);
   background-color: black;
-  background-image: radial-gradient(circle at 33% 33%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.1) 80%, black);
-  filter: drop-shadow(2px 2px 0.25em white);
+  background-image: radial-gradient(circle at 33% 33%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.1) 80%, black);
+  filter: drop-shadow(2px 2px 0.25em azure);
 }
 
 #sphere {
+  width: 100%;
+  height: 100%;
+
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  transform-style: preserve-3d;
+}
+
+.sphere-text {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+
+  color: azure;
+  font-family: 'Helvetica Neue';
+  font-weight: 500;
+  font-size: 1em;
+
+  transform: translateZ(53px)
 }
