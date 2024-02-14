@@ -63,14 +63,19 @@ body {
   color: aliceblue;
 }
 
+#title-wrapper > * {
+  margin: 100px 0;
+}
+
 #text-wrapper {
   text-align: center;
   position: relative;
+  display: none;
 }
+
 
 #spinning-text {
   display: inline-block;
-  margin: 100px 0;
 
   font-size: 2em;
   color: azure;
@@ -95,12 +100,13 @@ body {
     rotateY(360deg); }
 }
 
+
 #cube {
   width: 50px;
   height: 50px;
   position: relative;
   left: 48%;
-  margin-bottom: 100px;
+  text-align: center;
 
   transform: var(--rotation-init-angle);
   animation-name: orbit-spin;
@@ -143,4 +149,21 @@ body {
 .bottom {
   transform: rotateX(-90deg) translateZ(25px);
   background: rgba(0,255,0,.3);
+}
+
+
+#sphere-background {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 47%;
+  border-radius: 50px;
+
+  background-color: black;
+  background-image: radial-gradient(circle at 33% 33%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.1) 80%, black);
+  filter: drop-shadow(2px 2px 0.25em white);
+}
+
+#sphere {
 }
