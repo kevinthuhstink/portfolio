@@ -1,8 +1,8 @@
 :root {
   --rotation-init-angle: rotateX(-8deg) rotateY(10deg) rotateZ(-30deg);
   --primary: darkslategray;
+  --secondary: darkolivegreen;
   --accent: red;
-  --accent-2: crimson;
   --background: azure;
 }
 
@@ -16,11 +16,16 @@ body {
   color: var(--primary);
 }
 
+h1 {
+  font-weight: 500;
+}
+
 #title-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-x: hidden;
 
   border-style: solid;
   border-width: 10px;
@@ -49,7 +54,6 @@ body {
   margin: 0;
   display: inline-block;
 
-  font-weight: 500;
   font-size: 4em;
   letter-spacing: 2px;
   line-height: 0.8;
@@ -93,7 +97,6 @@ body {
 
 #title-links > * {
   text-decoration: none;
-  display: inline;
 }
 
 #title-links a:any-link {
@@ -171,7 +174,7 @@ body {
 .sphere-text {
   position: absolute;
 
-  color: var(--accent-2);
+  color: var(--primary);
   font-family: 'Helvetica Neue';
   font-weight: 500;
   font-size: 1em;
@@ -258,4 +261,21 @@ body {
   z-index: 0;
 
   fill: var(--primary);
+}
+
+#cringephrase {
+  position: absolute;
+  bottom: 20px;
+  right: calc(20vw + 4px);
+  font-size: 0.78em;
+  line-height: 0.1;
+}
+
+#cringephrase > p {
+  color: var(--background);
+  display: inline;
+}
+
+#cringephrase > p:hover {
+  color: var(--accent);
 }
