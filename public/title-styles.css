@@ -2,6 +2,7 @@
   --rotation-init-angle: rotateX(-8deg) rotateY(10deg) rotateZ(-30deg);
   --primary: darkslategray;
   --accent: red;
+  --accent-2: crimson;
   --background: azure;
 }
 
@@ -11,6 +12,7 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--primary);
 }
 
@@ -25,7 +27,7 @@ body {
   border-color: var(--primary);
 
   font-family: "Helvetica Neue", sans-serif;
-  font-weight: 200;
+  font-weight: 500;
   background: var(--background);
 }
 
@@ -47,7 +49,7 @@ body {
   margin: 0;
   display: inline-block;
 
-  font-weight: 200;
+  font-weight: 500;
   font-size: 4em;
   letter-spacing: 2px;
   line-height: 0.8;
@@ -55,6 +57,7 @@ body {
 
 #title-spacer {
   margin: 0 20px;
+  font-weight: 200;
   font-size: 8em;
   line-height: 0.8;
 }
@@ -122,9 +125,10 @@ body {
   border-color: var(--primary);
   border-width: 2px;
 
+  z-index: 1;
   perspective: 95px;
-  right: 30vw;
-  bottom: 20vh;
+  right: 20vw;
+  bottom: calc(60vh - 70px);
 }
 
 #sphere-background::before {
@@ -167,6 +171,7 @@ body {
 .sphere-text {
   position: absolute;
 
+  color: var(--accent-2);
   font-family: 'Helvetica Neue';
   font-weight: 500;
   font-size: 1em;
@@ -228,9 +233,6 @@ body {
   transform: rotateY(158deg) translateZ(52.9px);
 }
 
-/* note to future self:
- * rotations also move the axes,
- * not just the element */
 @keyframes spin {
   0% {
     transform:
@@ -246,3 +248,14 @@ body {
 
 
 /* HAND */
+#hand1 {
+  position: absolute;
+  width: 200px;
+  height: 450px;
+
+  right: calc(20vw - 110px);;
+  bottom: calc(30vh - 320px);
+  z-index: 0;
+
+  fill: var(--primary);
+}
