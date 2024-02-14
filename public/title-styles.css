@@ -1,8 +1,8 @@
 :root {
   --rotation-init-angle: rotateX(-8deg) rotateY(10deg) rotateZ(-30deg);
   --primary: darkslategray;
-  --secondary: darkolivegreen;
-  --accent: red;
+  --accent: #ff7a7a;
+  --accent-deep: red;
   --background: azure;
 }
 
@@ -12,12 +12,12 @@
 
 body {
   margin: 0;
-  overflow-x: hidden;
   color: var(--primary);
 }
 
-h1 {
+h1, h2 {
   font-weight: 500;
+  margin: 0;
 }
 
 #title-wrapper {
@@ -25,10 +25,10 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-x: hidden;
+  overflow: hidden;
 
   border-style: solid;
-  border-width: 10px;
+  border-width: 18px;
   border-color: var(--primary);
 
   font-family: "Helvetica Neue", sans-serif;
@@ -51,7 +51,6 @@ h1 {
 }
 
 #title > h1 {
-  margin: 0;
   display: inline-block;
 
   font-size: 4em;
@@ -77,11 +76,17 @@ h1 {
   font-weight: 500;
 }
 
+#aboutme-header {
+  font-size: 2.5em;
+  line-height: 1.6;
+}
+
 #aboutme {
   position: absolute;
   display: inline-block;
-  width: 200px;
+  width: 260px;
   bottom: 20px;
+  text-align: justify;
 }
 
 #title-links {
@@ -96,6 +101,7 @@ h1 {
 }
 
 #title-links > * {
+  text-align: end;
   text-decoration: none;
 }
 
@@ -131,7 +137,7 @@ h1 {
   z-index: 1;
   perspective: 95px;
   right: 20vw;
-  bottom: calc(60vh - 70px);
+  bottom: calc(60vh - 110px);
 }
 
 #sphere-background::before {
@@ -142,7 +148,7 @@ h1 {
   height: 100px;
 
   transform: translateZ(2px);
-  background-color: var(--accent);
+  background-color: var(--accent-deep);
   background-image: radial-gradient(circle at 33% 33%, rgba(255,255,255,.55) 0%, rgba(255,255,255,.4) 40%, rgba(255,255,255,.1) 80%, black);
   filter: drop-shadow(2px 2px 0.25em var(--primary));
 }
@@ -241,41 +247,53 @@ h1 {
     transform:
       var(--rotation-init-angle)
       rotateY(0deg);
+    text-shadow: var(--primary) 0.5px 0.5px 0.5px;
+    }
+  50%% {
+    transform:
+      var(--rotation-init-angle)
+      rotateY(-.180deg);
+    text-shadow: var(--primary) -0.5px -0.5px 0.5px;
     }
   100% {
     transform:
       var(--rotation-init-angle)
       rotateY(-360deg);
+    text-shadow: var(--primary) 0.5px 0.5px 0.5px;
     }
 }
 
 
 /* HAND */
-#hand1 {
+svg {
   position: absolute;
+  z-index: 0;
+  fill: var(--primary);
+}
+
+#hand1 {
+  width: 180px;
+  height: 450px;
+
+  right: calc(20vw - 130px);;
+  bottom: calc(30vh - 320px);
+}
+
+#hand2 {
   width: 200px;
   height: 450px;
 
-  right: calc(20vw - 110px);;
-  bottom: calc(30vh - 320px);
-  z-index: 0;
+  right: calc(20vw + 35px);;
+  bottom: calc(30vh - 350px);
 
-  fill: var(--primary);
 }
 
 #cringephrase {
   position: absolute;
-  bottom: 20px;
-  right: calc(20vw + 4px);
-  font-size: 0.78em;
-  line-height: 0.1;
-}
+  bottom: 10px;
+  right: calc(20vw + 165px);
+  margin: 0;
 
-#cringephrase > p {
-  color: var(--background);
-  display: inline;
-}
-
-#cringephrase > p:hover {
-  color: var(--accent);
+  font-size: 1.2em;
+  color: var(--primary);
 }
