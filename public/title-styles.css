@@ -43,7 +43,7 @@ h1, h2 {
 }
 
 #title-main {
-  margin-top: auto;
+  margin: auto 0;
   padding-left: 20px;
   width: 900px;
 }
@@ -88,7 +88,10 @@ h1, h2 {
 }
 
 #link {
-  font-size: 3.3em;
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+  font-size: 3em;
 }
 
 #link:any-link {
