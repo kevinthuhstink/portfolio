@@ -43,8 +43,8 @@ h1, h2 {
 
 #aboutme {
   position: absolute;
+  height: calc(100vh - 20px);
   margin: 10px;
-  height: 100%;
   width: 580px;
   left: 0;
   bottom: 0;
@@ -55,8 +55,14 @@ h1, h2 {
   overflow: hidden;
 }
 
-#aboutme > img {
-  flex-grow: 1;
+#me-pic {
+  position: relative;
+  padding: 15px;
+  border: var(--border-primary);
+
+  width: 270px;
+  height: 270px;
+  margin: auto;
 }
 
 #text {
@@ -80,37 +86,21 @@ h1, h2 {
   margin: 0;
 }
 
-#title-links {
+#link {
   position: absolute;
-  display: inline;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-
-  right: 20px;
-  top: 20px;
+  left: 602px;
+  bottom: 20px;
+  font-size: 3em;
 }
 
-#title-links > * {
-  text-align: end;
-  text-decoration: none;
-}
-
-#title-links a:any-link {
+#link:any-link {
   color: var(--primary);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
-#title-links a:hover {
+#link:hover {
   color: var(--accent);
 }
-
-#title-links > li:first-child {
-  text-decoration: line-through;
-  text-decoration-thickness: 4px;
-  text-decoration-color: var(--accent);
-}
-
 
 
 #drawings {
