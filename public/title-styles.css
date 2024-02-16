@@ -4,6 +4,7 @@
   --accent: #ff7a7a;
   --accent-deep: red;
   --background: azure;
+  --border-primary: 2px dashed var(--primary)
 }
 
 * {
@@ -20,15 +21,19 @@ h1, h2 {
   margin: 0;
 }
 
+*::selection {
+  color: var(--background);
+  background-color: var(--accent);
+}
+
 #title-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
 
   border-style: solid;
-  border-width: 18px;
+  border-width: 10px;
   border-color: var(--primary);
 
   font-family: "Helvetica Neue", sans-serif;
@@ -36,57 +41,43 @@ h1, h2 {
   background: var(--background);
 }
 
-#title-topbar {
-  position: relative;
-  flex-grow: 0;
-}
-
-#title {
-  display: flex;
-  padding: 20px;
-
-  border-bottom-style: dashed;
-  border-width: 2px;
-  border-color: var(--primary);
-}
-
-#title > h1 {
-  display: inline-block;
-
-  font-size: 4em;
-  letter-spacing: 2px;
-  line-height: 0.8;
-}
-
-#title-spacer {
-  margin: 0 20px;
-  font-weight: 200;
-  font-size: 8em;
-  line-height: 0.8;
-}
-
-#title-bottom {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  flex-grow: 1;
-
-  padding: 20px;
-  margin: 0;
-  font-weight: 500;
-}
-
-#aboutme-header {
-  font-size: 2.5em;
-  line-height: 1.6;
-}
-
 #aboutme {
   position: absolute;
-  display: inline-block;
-  width: 260px;
-  bottom: 20px;
-  text-align: justify;
+  margin: 10px;
+  height: 100%;
+  width: 580px;
+  left: 0;
+  bottom: 0;
+
+  border-right: var(--border-primary);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#aboutme > img {
+  flex-grow: 1;
+}
+
+#text {
+  padding: 20px;
+  flex-grow: 0;
+  border-top: var(--border-primary);
+}
+
+#text > h1 {
+  font-size: 4em;
+  line-height: 0.9;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+}
+
+#text > small {
+  font-size: 2.5em;
+}
+
+#description {
+  margin: 0;
 }
 
 #title-links {
@@ -122,7 +113,15 @@ h1, h2 {
 
 
 
-/* SPHERE */
+#drawings {
+  position: absolute;
+  width: calc(10vw + 235px);
+  height: calc(70vh - 6px);
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
 #sphere-background {
   position: absolute;
   display: inline;
@@ -130,14 +129,12 @@ h1, h2 {
   height: 154px;
   padding: 25px;
 
-  border-style: dashed;
-  border-color: var(--primary);
-  border-width: 2px;
+  border: var(--border-primary);
 
   z-index: 1;
   perspective: 95px;
-  right: 20vw;
-  bottom: calc(60vh - 110px);
+  right: 10vw;
+  top: 0;
 }
 
 #sphere-background::before {
@@ -263,37 +260,22 @@ h1, h2 {
     }
 }
 
-
-/* HAND */
 svg {
   position: absolute;
-  z-index: 0;
   fill: var(--primary);
 }
 
 #hand1 {
   width: 180px;
   height: 450px;
-
-  right: calc(20vw - 130px);;
-  bottom: calc(30vh - 320px);
+  left: 180px;
+  bottom: calc(30vh - 300px);
+  z-index: 0;
 }
-
 #hand2 {
   width: 200px;
   height: 450px;
-
-  right: calc(20vw + 35px);;
-  bottom: calc(30vh - 350px);
-
-}
-
-#cringephrase {
-  position: absolute;
-  bottom: 10px;
-  right: calc(20vw + 165px);
-  margin: 0;
-
-  font-size: 1.2em;
-  color: var(--primary);
+  left: 0;
+  bottom: calc(30vh - 330px);
+  z-index: 2;
 }
