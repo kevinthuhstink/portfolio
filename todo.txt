@@ -1,23 +1,32 @@
 TODO
 EMPHASIZE DESIGN AND EASE OF USE
 
+Eventually
+    Move .css to .scss
+    Fill your projects page with more work
+    More animations using js? might not be suitable
+    Be more selective with your fonts
+    Dark mode with inverted colors
+
 1.0
     There should be three sections: the title, about me, and work/projects
     Format the title
         A sharp looking background with a negative color effect would be cool
-        Leave github, linked, other contacts here but small
+        Leave github, linkedin, other contacts here but small
         Opening animation
             Line splits the screen down the middle and opens into the title
-        Title animation
-            Take inspo from that bocchi edit
-            A model with words cycling around it and electric spewing out
-            Lorna Shore audio visualizer
-    Format the body of the website
+        Title styling
+            Brutalism
+            Hand symbolism inspired by Evangelion
+                Reach into and grab the ball?
+    Format the aboutme of the website
+        Maintain a similar theme to the title
+        aboutme should resonate with your cover letter
         Keep your github, linkedin, and other links at the bottom for people to reach out
         Include a button at the bottom of the page to head to the next page
-    Format the projects
-        Follow the same structure of the body
+        Include your resume
+    Make your projects extravagant
+        Be the show-off
 
     The three parts should be coherent so I can plan transitions between the pages later
-    Implement closing and opening of the curly braces
-    Make projects go almost fullscreen with a description
+    Make each individual project go almost fullscreen with a description
