@@ -32,24 +32,36 @@ h1, h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  border-style: solid;
-  border-width: 10px;
-  border-color: var(--primary);
+  overflow-y: auto;
 
   font-family: "Helvetica Neue", sans-serif;
   font-weight: 500;
   background: var(--background);
 }
 
+#topbar {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  display: flex;
+
+  background: var(--primary);
+  background-clip: content-box;
+  border-bottom: var(--border-primary);
+  border-width: 8px;
+}
+
+#topbar-pad {
+}
+
 #title-main {
-  margin: auto 0;
-  padding-left: 20px;
-  width: 900px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 30px;
+  width: 850px;
 }
 
 #aboutme {
-  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -69,7 +81,6 @@ h1, h2 {
 #text {
   width: 560px;
   padding-left: 20px;
-  margin-top: 30px;
 }
 
 #text > h1 {
@@ -88,19 +99,18 @@ h1, h2 {
 }
 
 #link {
-  position: absolute;
-  left: 30px;
-  bottom: 20px;
+  position: relative;
   font-size: 3em;
 }
-
 #link:any-link {
   color: var(--primary);
   text-decoration: underline;
 }
-
 #link:hover {
   color: var(--accent);
+}
+#link::selection {
+  text-decoration: none;
 }
 
 
