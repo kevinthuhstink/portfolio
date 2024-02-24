@@ -19,14 +19,14 @@ Eventually
             Brutalism
             Hand symbolism inspired by Evangelion
                 Reach into and grab the ball?
-    Format the aboutme of the website
+    Format the projects of the website
         Maintain a similar theme to the title
         aboutme should resonate with your cover letter
         Keep your github, linkedin, and other links at the bottom for people to reach out
         Include a button at the bottom of the page to head to the next page
         Include your resume
-    Make your projects extravagant
-        Be the show-off
+        Make your projects extravagant
+            Be the show-off
 
     The three parts should be coherent so I can plan transitions between the pages later
     Make each individual project go almost fullscreen with a description
