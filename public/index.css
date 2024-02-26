@@ -29,6 +29,14 @@ h1, h2 {
   background-color: var(--accent);
 }
 
+:any-link {
+  color: var(--primary);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--accent);
+}
+
 #title-wrapper {
   min-height: 100vh;
   display: flex;
@@ -106,11 +114,21 @@ h1, h2 {
   filter: var(--svg-to-primary);
 }
 
+
+#title-bottom {
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 120px);
+  bottom: 0;
+  overflow-y: auto;
+
+  background: var(--background);
+}
+
 #title-main {
-  margin-top: auto;
-  margin-bottom: 20vh;
-  margin-left: 30px;
+  margin: 40px 30px;
   width: 850px;
+  display: inline-block;
 }
 
 #aboutme {
@@ -154,40 +172,31 @@ h1, h2 {
   position: relative;
   font-size: 3em;
 }
-#link:any-link {
-  color: var(--primary);
-  text-decoration: underline;
-}
-#link:hover {
-  color: var(--accent);
-}
-#link::selection {
-  text-decoration: none;
-}
 
 
 #drawings {
   position: absolute;
-  width: calc(10vw + 235px);
-  height: calc(70vh - 6px);
+  width: calc(100% - 910px);
+  height: calc(100% - 40px);
+  min-height: 365px;
   right: 0;
-  bottom: 0;
+  margin-top: 40px;
+
+  display: inline-block;
   overflow: hidden;
 }
 
 #sphere-background {
   position: absolute;
-  display: inline;
+  top: calc(8% + 10px);
+  left: 90px;
   width: 154px;
   height: 154px;
   padding: 25px;
 
   border: var(--border-primary);
-
   z-index: 1;
   perspective: 95px;
-  right: 10vw;
-  top: 0;
 }
 
 #sphere-background::before {
@@ -204,7 +213,6 @@ h1, h2 {
 }
 
 #sphere {
-  position: absolute;
   width: 100px;
   height: 100px;
 
@@ -314,20 +322,19 @@ h1, h2 {
 }
 
 #drawings > img {
-  position: absolute;
   filter: var(--svg-to-primary);
+  position: absolute;
+  top: 30%;
 }
 #right-hand {
   width: 180px;
   height: 450px;
-  left: 180px;
-  bottom: calc(30vh - 300px);
-  z-index: 0;
+  right: 0;
+  z-index: -1;
 }
 #left-hand {
   width: 200px;
   height: 450px;
-  left: 0;
-  bottom: calc(30vh - 330px);
-  z-index: 2;
+  right: 160px;
+  z-index: 1;
 }
