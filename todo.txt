@@ -14,7 +14,8 @@ Eventually
         A sharp looking background with a negative color effect would be cool
         Leave github, linkedin, other contacts here but small
         Opening animation
-            Line splits the screen down the middle and opens into the title
+            Upper "curtain" div scrolls past, revealing a dotted border, the qr code and kevinthuhstink.com
+            when it's done drop the divs, lower goes down and upper goes up
         Title styling
             Brutalism
             Hand symbolism inspired by Evangelion
