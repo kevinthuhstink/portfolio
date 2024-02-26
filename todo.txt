@@ -9,7 +9,7 @@ Eventually
     Dark mode with inverted colors
 
 1.0
-    There should be three sections: the title, about me, and work/projects
+    There should be two sections: the title, and work/projects
     Format the title
         A sharp looking background with a negative color effect would be cool
         Leave github, linkedin, other contacts here but small

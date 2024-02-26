@@ -3,8 +3,10 @@
   --primary: darkslategray;
   --accent: #ff7a7a;
   --accent-deep: red;
+
   --background: azure;
-  --border-primary: 2px dashed var(--primary)
+  --border-primary: 2px dashed var(--primary);
+  --svg-to-primary: invert(24%) sepia(11%) saturate(1586%) hue-rotate(131deg) brightness(94%) contrast(82%);
 }
 
 * {
@@ -48,10 +50,7 @@ h1, h2 {
   background: var(--primary);
   background-clip: content-box;
   border-bottom: var(--border-primary);
-  border-width: 8px;
-}
-
-#topbar-pad {
+  border-width: 20px;
 }
 
 #title-main {
@@ -261,19 +260,18 @@ h1, h2 {
     }
 }
 
-svg {
+#drawings > img {
   position: absolute;
-  fill: var(--primary);
+  filter: var(--svg-to-primary);
 }
-
-#hand1 {
+#right-hand {
   width: 180px;
   height: 450px;
   left: 180px;
   bottom: calc(30vh - 300px);
   z-index: 0;
 }
-#hand2 {
+#left-hand {
   width: 200px;
   height: 450px;
   left: 0;
