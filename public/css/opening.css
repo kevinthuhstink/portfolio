@@ -1,4 +1,4 @@
-:tabnextroot {
+:root {
   --primary: darkslategray;
   --background: azure;
   --border-background: 2px dashed var(--background);
