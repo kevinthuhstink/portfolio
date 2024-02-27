@@ -1,0 +1,340 @@
+:root {
+  --rotation-init-angle: rotateX(-8deg) rotateY(10deg) rotateZ(-30deg);
+  --primary: darkslategray;
+  --accent: #ff7a7a;
+  --accent-deep: red;
+
+  --background: azure;
+  --border-primary: 2px dashed var(--primary);
+  --svg-to-primary: invert(24%) sepia(11%) saturate(1586%) hue-rotate(131deg) brightness(94%) contrast(82%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--primary);
+  overflow: hidden;
+}
+
+h1, h2 {
+  font-weight: 500;
+  margin: 0;
+}
+
+*::selection {
+  color: var(--background);
+  background-color: var(--accent);
+}
+
+:any-link {
+  color: var(--primary);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--accent);
+}
+
+#title-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  background: var(--background);
+}
+
+#topbar {
+  position: fixed;
+  width: 100%;
+  height: 120px;
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  color: var(--primary);
+  background: var(--background);
+  border-bottom: var(--border-primary);
+  border-width: 2px;
+}
+
+#barcode-wrapper {
+  height: 80px;
+  margin: auto 0;
+}
+
+#barcode-wrapper > * {
+  height: 100%;
+  margin-right: 10px;
+}
+
+#name-box {
+  display: inline-block;
+  width: 80px;
+  margin: 0;
+
+  text-align: justify;
+  line-height: 0.8;
+  font-size: 2.1em;
+}
+
+#contacts {
+  margin: auto 0;
+}
+
+#contacts > h2 {
+  font-size: 3em;
+}
+
+#contact-links {
+  padding: 0;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#contact-links > li {
+  list-style-type: none;
+  display: inline;
+}
+
+#scissors {
+  position: absolute;
+  bottom: -12px;
+  left: 20px;
+  width: 30px;
+  height: 24px;
+  filter: var(--svg-to-primary);
+}
+
+
+#title-bottom {
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 120px);
+  bottom: 0;
+  overflow-y: auto;
+
+  background: var(--background);
+}
+
+#title-main {
+  margin: 40px 30px;
+  width: 850px;
+  display: inline-block;
+}
+
+#aboutme {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+#me-pic {
+  padding: 10px;
+  width: 270px;
+  height: 270px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+
+  border: var(--border-primary);
+  box-shadow: 20px 30px var(--primary);
+}
+
+#text {
+  width: 560px;
+  padding-left: 20px;
+}
+
+#text > h1 {
+  font-size: 4em;
+  line-height: 0.9;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+}
+
+#text > small {
+  font-size: 2.5em;
+}
+
+#description {
+  margin: 0;
+}
+
+#link {
+  position: relative;
+  font-size: 3em;
+}
+
+
+#drawings {
+  position: absolute;
+  width: calc(100% - 910px);
+  height: calc(100% - 40px);
+  min-height: 365px;
+  right: 0;
+  margin-top: 40px;
+
+  display: inline-block;
+  overflow: hidden;
+}
+
+#sphere-background {
+  position: absolute;
+  top: calc(8% + 10px);
+  left: 90px;
+  width: 154px;
+  height: 154px;
+  padding: 25px;
+
+  border: var(--border-primary);
+  z-index: 1;
+  perspective: 95px;
+}
+
+#sphere-background::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+
+  transform: translateZ(2px);
+  background-color: var(--accent-deep);
+  background-image: radial-gradient(circle at 33% 33%, rgba(255,255,255,.55) 0%, rgba(255,255,255,.4) 40%, rgba(255,255,255,.1) 80%, black);
+  filter: drop-shadow(2px 2px 0.25em var(--primary));
+}
+
+#sphere {
+  width: 100px;
+  height: 100px;
+
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  transform-style: preserve-3d;
+}
+
+.half {
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  margin: 0;
+}
+
+.half:last-child {
+  transform: rotateY(180deg);
+}
+
+.sphere-text {
+  position: absolute;
+
+  color: var(--primary);
+  font-family: 'Helvetica Neue';
+  font-weight: 500;
+  font-size: 1em;
+  transform-style: preserve-3d;
+}
+
+.sphere-text:first-child {
+  transform: translateZ(53px);
+}
+.sphere-text:nth-child(2) {
+  transform: rotateY(10deg) translateZ(53px);
+}
+.sphere-text:nth-child(3) {
+  transform: rotateY(20deg) translateZ(53px);
+}
+.sphere-text:nth-child(4) {
+  transform: rotateY(30deg) translateZ(54.2px);
+}
+.sphere-text:nth-child(5) {
+  transform: rotateY(36deg) translateZ(53px);
+}
+.sphere-text:nth-child(6) {
+  transform: rotateY(46deg) translateZ(54.2px);
+}
+.sphere-text:nth-child(7) {
+  transform: rotateY(53deg) translateZ(53px);
+}
+.sphere-text:nth-child(8) {
+  transform: rotateY(63deg) translateZ(53px);
+}
+.sphere-text:nth-child(9) {
+  transform: rotateY(73deg) translateZ(53px);
+}
+.sphere-text:nth-child(10) {
+  transform: rotateY(83deg) translateZ(53px);
+}
+.sphere-text:nth-child(11) {
+  transform: rotateY(91deg) translateZ(54.2px);
+}
+.sphere-text:nth-child(12) {
+  transform: rotateY(97deg) translateZ(55.2px);
+}
+.sphere-text:nth-child(13) {
+  transform: rotateY(105deg) translateZ(53px);
+}
+.sphere-text:nth-child(14) {
+  transform: rotateY(115deg) translateZ(53px);
+}
+.sphere-text:nth-child(15) {
+  transform: rotateY(123deg) translateZ(54.2px);
+}
+.sphere-text:nth-child(16) {
+  transform: rotateY(133deg) translateZ(53px);
+}
+.sphere-text:nth-child(17) {
+  transform: rotateY(143deg) translateZ(53px);
+}
+.sphere-text:last-child {
+  transform: rotateY(158deg) translateZ(52.9px);
+}
+
+@keyframes spin {
+  0% {
+    transform:
+      var(--rotation-init-angle)
+      rotateY(0deg);
+    text-shadow: var(--primary) 0.5px 0.5px 0.5px;
+    }
+  50%% {
+    transform:
+      var(--rotation-init-angle)
+      rotateY(-.180deg);
+    text-shadow: var(--primary) -0.5px -0.5px 0.5px;
+    }
+  100% {
+    transform:
+      var(--rotation-init-angle)
+      rotateY(-360deg);
+    text-shadow: var(--primary) 0.5px 0.5px 0.5px;
+    }
+}
+
+#drawings > img {
+  filter: var(--svg-to-primary);
+  position: absolute;
+  top: 30%;
+}
+#right-hand {
+  width: 180px;
+  height: 450px;
+  right: 0;
+  z-index: -1;
+}
+#left-hand {
+  width: 200px;
+  height: 450px;
+  right: 160px;
+  z-index: 1;
+}

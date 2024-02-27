@@ -1,0 +1,71 @@
+:tabnextroot {
+  --primary: darkslategray;
+  --background: azure;
+  --border-background: 2px dashed var(--background);
+}
+
+#opening-animation-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+}
+
+#opening-animation-wrapper > * {
+  width: 100%;
+  position: absolute;
+  background: var(--primary);
+}
+
+#curtain {
+  height: 122px;
+  z-index: 3;
+  animation-name: slide-out;
+  animation-timing-function: ease-out;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+#open-bottom {
+  height: calc(100% - 120px);
+  bottom: 0;
+}
+
+#open-top {
+  height: 120px;
+  top: 0;
+  padding: 0 30px;
+  display: flex;
+  border-bottom: var(--border-background);
+}
+
+#opening-icon-wrapper {
+  height: 80px;
+  margin: auto 0;
+}
+
+#opening-icon-wrapper > * {
+  height: 100%;
+  margin-right: 10px;
+}
+
+#opening-name-box {
+  display: inline-block;
+  width: 80px;
+  margin: 0;
+
+  color: var(--background);
+  font-family: "Helvetica Neue";
+  text-align: justify;
+  line-height: 0.8;
+  font-size: 2.1em;
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(100vw);
+  }
+}
