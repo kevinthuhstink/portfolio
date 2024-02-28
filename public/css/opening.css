@@ -20,10 +20,6 @@
 #curtain {
   height: 122px;
   z-index: 3;
-  animation-name: slide-out;
-  animation-timing-function: ease-out;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
 }
 
 #open-bottom {
@@ -61,11 +57,41 @@
   font-size: 2.1em;
 }
 
-@keyframes slide-out {
+@keyframes curtain-slide-out {
   0% {
     transform: translate(0);
   }
+  30% {
+    transform: translate(0);
+  }
+  90% {
+    transform: translate(100vw);
+  }
   100% {
     transform: translate(100vw);
+  }
+}
+
+@keyframes unravel-top {
+  0% {
+    transform: translate(0);
+  }
+  80% {
+    transform: translate(0, -120px);
+  }
+  100% {
+    transform: translate(0, -120px);
+  }
+}
+
+@keyframes unravel-bottom {
+  0% {
+    transform: translate(0);
+  }
+  80% {
+    transform: translate(0, calc(100vh - 120px));
+  }
+  100% {
+    transform: translate(0, calc(100vh - 120px));
   }
 }
