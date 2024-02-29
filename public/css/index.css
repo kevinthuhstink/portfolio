@@ -120,14 +120,15 @@ a:hover {
   width: 100%;
   height: calc(100% - 120px);
   bottom: 0;
+  display: flex;
   overflow-y: auto;
-
   background: var(--background);
 }
 
 #title-main {
-  margin: 40px 30px;
-  width: 850px;
+  margin: auto 30px;
+  min-width: 850px;
+  width: calc(100vw - 440px);
   display: inline-block;
 }
 
@@ -149,8 +150,7 @@ a:hover {
 }
 
 #text {
-  width: 560px;
-  padding-left: 20px;
+  margin-left: 20px;
 }
 
 #text > h1 {
@@ -176,7 +176,7 @@ a:hover {
 
 #drawings {
   position: absolute;
-  width: calc(100% - 910px);
+  width: 380px;
   height: calc(100% - 40px);
   min-height: 365px;
   right: 0;
@@ -188,8 +188,8 @@ a:hover {
 
 #sphere-background {
   position: absolute;
-  top: calc(8% + 10px);
-  left: 90px;
+  top: calc(15% + 10px);
+  right: 120px;
   width: 154px;
   height: 154px;
   padding: 25px;
@@ -324,7 +324,7 @@ a:hover {
 #drawings > img {
   filter: var(--svg-to-primary);
   position: absolute;
-  top: 30%;
+  bottom: calc(30% - 240px);
 }
 #right-hand {
   width: 180px;
