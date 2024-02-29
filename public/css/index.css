@@ -149,7 +149,7 @@ a:hover {
   padding: 10px;
   width: 270px;
   height: 270px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   margin-right: 20px;
 
   border: var(--border-primary);
@@ -178,6 +178,24 @@ a:hover {
 #link {
   position: relative;
   font-size: 3em;
+}
+
+@media only screen and (max-width: 910px) {
+  #title-main {
+    width: calc(100% - 60px);
+    min-width: 540px;
+  }
+  #aboutme {
+    flex-direction: column;
+  }
+  #text {
+    margin: 0;
+  }
+
+  #me-pic {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+  }
 }
 
 
