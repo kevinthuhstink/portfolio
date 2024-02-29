@@ -88,11 +88,6 @@ a:hover {
 #contacts {
   margin: auto 0;
 }
-@media only screen and (max-width: 640px) {
-  #contacts {
-    display: none;
-  }
-}
 
 #contacts > h2 {
   font-size: 3em;
@@ -180,24 +175,6 @@ a:hover {
   font-size: 3em;
 }
 
-@media only screen and (max-width: 910px) {
-  #title-main {
-    width: calc(100% - 60px);
-    min-width: 540px;
-  }
-  #aboutme {
-    flex-direction: column;
-  }
-  #text {
-    margin: 0;
-  }
-
-  #me-pic {
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-  }
-}
-
 
 #drawings {
   position: absolute;
@@ -208,12 +185,6 @@ a:hover {
 
   display: inline-block;
   overflow: hidden;
-}
-/* make sure drawings don't bleed into the text */
-@media only screen and (max-width: 1200px) {
-  #drawings {
-    display: none;
-  }
 }
 
 #sphere-background {
@@ -367,4 +338,48 @@ a:hover {
   height: 450px;
   right: 160px;
   z-index: 1;
+}
+
+@media only screen and (max-width: 640px) {
+  #contacts {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 910px) {
+  #title-main {
+    width: calc(100% - 60px);
+    min-width: 540px;
+  }
+  #aboutme {
+    flex-direction: column;
+  }
+  #text {
+    margin: 0;
+  }
+
+  #me-pic {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+  }
+  #drawings {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #title-bottom {
+    flex-direction: column;
+  }
+
+  #drawings {
+    display: block;
+    position: relative;
+    left: calc(50vw - 190px);
+  }
+  
+  #title-main {
+    display: block;
+    margin: 0 30px;
+  }
 }
