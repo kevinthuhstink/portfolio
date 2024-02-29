@@ -88,6 +88,11 @@ a:hover {
 #contacts {
   margin: auto 0;
 }
+@media only screen and (max-width: 640px) {
+  #contacts {
+    display: none;
+  }
+}
 
 #contacts > h2 {
   font-size: 3em;
@@ -120,6 +125,7 @@ a:hover {
   width: 100%;
   height: calc(100% - 120px);
   bottom: 0;
+  padding-top: 40px;
   display: flex;
   overflow-y: auto;
   background: var(--background);
@@ -127,6 +133,7 @@ a:hover {
 
 #title-main {
   margin: auto 30px;
+  margin-top: max(40px, auto);
   min-width: 850px;
   width: calc(100vw - 440px);
   display: inline-block;
@@ -180,10 +187,15 @@ a:hover {
   height: calc(100% - 40px);
   min-height: 365px;
   right: 0;
-  margin-top: 40px;
 
   display: inline-block;
   overflow: hidden;
+}
+/* make sure drawings don't bleed into the text */
+@media only screen and (max-width: 1200px) {
+  #drawings {
+    display: none;
+  }
 }
 
 #sphere-background {

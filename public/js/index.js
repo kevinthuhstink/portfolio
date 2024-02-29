@@ -30,6 +30,8 @@ function loadAnimations() {
   curtainDraw()
   setTimeout(unravelTop, 3000)
   setTimeout(unravelBottom, 3000)
+  const animationWrapper = document.getElementById("opening-animation-wrapper")
+  setTimeout(() => animationWrapper.style.display = "none", 4500)
 }
 
 window.onload = loadAnimations
