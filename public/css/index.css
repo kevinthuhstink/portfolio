@@ -16,6 +16,7 @@
 body {
   margin: 0;
   color: var(--primary);
+  font-family: "Helvetica Neue";
   overflow: hidden;
 }
 
@@ -44,7 +45,6 @@ a:hover {
   justify-content: space-between;
   overflow-y: auto;
 
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 500;
   background: var(--background);
 }
@@ -174,7 +174,6 @@ a:hover {
   position: absolute;
 
   color: var(--primary);
-  font-family: 'Helvetica Neue';
   font-weight: 500;
   font-size: 1em;
   transform-style: preserve-3d;
