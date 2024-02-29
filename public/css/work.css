@@ -1,3 +1,12 @@
+:root {
+  --rotation-init-angle: rotateX(-8deg) rotateY(10deg) rotateZ(-30deg);
+  --background: azure;
+  --primary: darkslategray;
+  --accent: #ff7a7a;
+  --accent-deep: red;
+  --border-primary: 2px dashed var(--primary);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -6,4 +15,9 @@ body {
   margin: 0;
   color: var(--primary);
   overflow: hidden;
+}
+
+#work-display {
+  background: var(--background);
+  padding: 40px;
 }

@@ -273,12 +273,6 @@ a:hover {
   z-index: 1;
 }
 
-@media only screen and (max-width: 640px) {
-  #contacts {
-    display: none;
-  }
-}
-
 @media only screen and (max-width: 910px) {
   #title-main {
     width: calc(100% - 60px);
