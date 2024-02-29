@@ -49,72 +49,6 @@ a:hover {
   background: var(--background);
 }
 
-#topbar {
-  position: fixed;
-  width: 100%;
-  height: 120px;
-  padding: 0 30px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-
-  color: var(--primary);
-  background: var(--background);
-  border-bottom: var(--border-primary);
-  border-width: 2px;
-}
-
-#barcode-wrapper {
-  height: 80px;
-  margin: auto 0;
-}
-
-#barcode-wrapper > * {
-  height: 100%;
-  margin-right: 10px;
-}
-
-#name-box {
-  display: inline-block;
-  width: 80px;
-  margin: 0;
-
-  text-align: justify;
-  line-height: 0.8;
-  font-size: 2.1em;
-}
-
-#contacts {
-  margin: auto 0;
-}
-
-#contacts > h2 {
-  font-size: 3em;
-}
-
-#contact-links {
-  padding: 0;
-  margin: 5px 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-#contact-links > li {
-  list-style-type: none;
-  display: inline;
-}
-
-#scissors {
-  position: absolute;
-  bottom: -12px;
-  left: 20px;
-  width: 30px;
-  height: 24px;
-  filter: var(--svg-to-primary);
-}
-
-
 #title-bottom {
   position: fixed;
   width: 100%;
@@ -377,7 +311,7 @@ a:hover {
     position: relative;
     left: calc(50vw - 190px);
   }
-  
+
   #title-main {
     display: block;
     margin: 0 30px;

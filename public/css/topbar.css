@@ -1,0 +1,57 @@
+#topbar {
+  position: fixed;
+  width: 100%;
+  height: 120px;
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  color: var(--primary);
+  background: var(--background);
+  border-bottom: var(--border-primary);
+  border-width: 2px;
+}
+
+#barcode-wrapper {
+  height: 80px;
+  margin: auto 0;
+}
+
+#barcode-wrapper > * {
+  height: 100%;
+  margin-right: 10px;
+}
+
+#name-box {
+  display: inline-block;
+  width: 80px;
+  margin: 0;
+
+  text-align: justify;
+  line-height: 0.8;
+  font-size: 2.1em;
+}
+
+#contact-links {
+  padding: 0;
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#contact-links > li {
+  list-style-type: none;
+  display: inline;
+  margin-left: 10px;
+}
+
+#scissors {
+  position: absolute;
+  bottom: -12px;
+  left: 20px;
+  width: 30px;
+  height: 24px;
+  filter: var(--svg-to-primary);
+}
