@@ -359,8 +359,8 @@ a:hover {
   }
 
   #me-pic {
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
+    width: 400px;
+    height: 400px;
   }
   #drawings {
     display: none;
